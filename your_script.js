@@ -42,10 +42,10 @@ fetch(mostrecentmatch)
   .then(response => response.json())
   .then(data => {
     document.getElementById('lastdicopatito').textContent = data[0]["Dicopatito"];
-    document.getElementById('lastdicopato').textContent = data[1]["Pato"];
+    // document.getElementById('lastdicopato').textContent = data[1]["Pato"];
     document.getElementById('lastnanox').textContent = data[2]["Nanox"];
     document.getElementById('lastsirmonkey').textContent = data[3]["Sir Monkey"];
-    document.getElementById('lastalanthekat').textContent = data[4]["alanthekat"];
+    // document.getElementById('lastalanthekat').textContent = data[4]["alanthekat"];
     document.getElementById('lastcarpincho').textContent = data[5]["Carpincho"];
-    document.getElementById('lastthexcarpincho').textContent = data[6]["thexcarpincho"];
+    // document.getElementById('lastthexcarpincho').textContent = data[6]["thexcarpincho"];
   });
