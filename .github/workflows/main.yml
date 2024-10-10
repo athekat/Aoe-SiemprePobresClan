@@ -11,9 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          python -m pip cache purge
-          python -m pip install requests Screenshot selenium webdriver-manager
+          python -m pip install requests selenium webdriver-manager
       - name: Run Python script
         run: |
           python get_chart.py
