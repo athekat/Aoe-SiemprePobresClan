@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 
 options = Options()
+options.add_argument('full_page_screenshot=True')
 options.add_argument('--headless')
 
 def download_div_image(url, div_selector, filename):
