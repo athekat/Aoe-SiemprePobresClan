@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
 def download_div_image(url, div_selector, filename):
     """Downloads an image of a specific <div> element from a webpage.
@@ -15,7 +16,7 @@ def download_div_image(url, div_selector, filename):
     """
 
     # Load the webpage using Selenium
-    driver = webdriver.Chrome()  # Replace with your preferred WebDriver
+    driver = webdriver.Chrome(ChromeDriverManager().install())  # Replace with your preferred WebDriver
     driver.get(url)
 
     # Wait for the <div> element to be visible
