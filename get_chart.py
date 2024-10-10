@@ -19,11 +19,11 @@ def download_div_image(url, div_selector, filename):
     """
 
     # Load the webpage using Selenium
-    driver = webdriver.Chrome()  # Replace with your preferred WebDriver
+    driver = webdriver.Chrome(options=options)
     driver.get(url)
 
     # Wait for the <div> element to be visible
-    wait = WebDriverWait(driver, 10)  # Adjust timeout as needed
+    wait = WebDriverWait(driver, 20)  # Adjust timeout as needed
     div_element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, div_selector)))
 
     # Take a screenshot of the <div> element
