@@ -21,4 +21,5 @@ jobs:
         with:
           name: div_image
           path: div_image.png
-          retention_days: 2
+          retention-days: 2
+          compression-level: 0
