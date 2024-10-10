@@ -1,0 +1,17 @@
+name: Download Div Image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  download-div-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          python -m pip install requests Pillow selenium webdriver-manager
+      - name: Run Python script
+        run: |
+          python get_chart.py
