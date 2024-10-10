@@ -21,3 +21,4 @@ jobs:
         with:
           name: div_image
           path: div_image.png
+          retention_days: 2
