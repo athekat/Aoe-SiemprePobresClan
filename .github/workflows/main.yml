@@ -17,7 +17,7 @@ jobs:
           python get_chart.py
 
       - name: Upload downloaded image
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: div_image
           path: div_image.png
