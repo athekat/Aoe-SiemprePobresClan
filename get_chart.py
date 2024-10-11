@@ -19,7 +19,7 @@ def download_div_image(url, div_selector, filename):
     # Load the webpage using Selenium
     driver = webdriver.Chrome(options=options)  # Replace with your preferred WebDriver
     driver.get(url)
-    driver.execute_script("document.body.style.zoom='110%'")
+    driver.execute_script("document.body.style.zoom='100%'")
     # Wait for the <div> element to be visible
     wait = WebDriverWait(driver, 40)  # Adjust timeout as needed
     element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, div_selector)))
