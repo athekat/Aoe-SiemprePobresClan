@@ -22,7 +22,7 @@ def download_div_image(url, div_selector, filename):
     driver.execute_script("document.body.style.zoom='110%'")
     # Wait for the <div> element to be visible
     wait = WebDriverWait(driver, 40)  # Adjust timeout as needed
-    div_element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, div_selector)))
+    element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, div_selector)))
     driver.execute_script('arguments[0].scrollIntoView({block: "center"});', element) 
 
     # Take a screenshot of the <div> element
