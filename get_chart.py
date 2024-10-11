@@ -19,7 +19,7 @@ def download_div_image(url, div_selector, filename):
     """
 
     # Load the webpage using Selenium
-    driver = webdriver.Edge(options=options)  # Replace with your preferred WebDriver
+    driver = webdriver.Chrome(options=options)  # Replace with your preferred WebDriver
     driver.get(url)
 
     # Wait for the <div> element to be visible
