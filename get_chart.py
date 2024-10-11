@@ -23,7 +23,7 @@ def download_div_image(url, div_selector, filename):
     driver.get(url)
 
     # Wait for the <div> element to be visible
-    wait = WebDriverWait(driver, 10)  # Adjust timeout as needed
+    wait = WebDriverWait(driver, 30)  # Adjust timeout as needed
     div_element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, div_selector)))
 
     # Take a screenshot of the <div> element
