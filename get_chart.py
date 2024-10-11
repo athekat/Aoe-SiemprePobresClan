@@ -22,7 +22,7 @@ def download_div_image(url, div_selector, filename):
     driver.execute_script("document.body.style.zoom='110%'")
     # Wait for the <div> element to be visible
     wait = WebDriverWait(driver, 40)  # Adjust timeout as needed
-    element = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, div_selector)))
+    div_element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, div_selector)))
     driver.execute_script('arguments[0].scrollIntoView({block: "center"});', element) 
 
     # Take a screenshot of the <div> element
@@ -33,7 +33,7 @@ def download_div_image(url, div_selector, filename):
 
 # Example usage
 url = "https://ratings.aoe2.se/?team_one=439001-6237950-18660623-6446904&team_two="
-div_selector = "//*[@id='random_map_histogram']"  # Replace with the actual CSS selector
+div_selector = "#random_map_histogram"  # Replace with the actual CSS selector
 filename = "1v1RM.png"
 
 download_div_image(url, div_selector, filename)
