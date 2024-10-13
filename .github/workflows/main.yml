@@ -1,6 +1,7 @@
 name: Download Div Image
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0/12 * * *"
 
@@ -15,13 +16,13 @@ jobs:
           python -m pip install requests Pillow selenium webdriver-manager
       - name: Run Python script
         run: |
-          python get_chart.py
+          python generatechart.py
 
       - name: Commit changes
         run: |
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
-          git add 1v1RM.png
+          git add 1v1chart.html
           git commit -m "Update date to $(date +%Y-%m-%d)" || echo "No changes to commit"
       - name: Push changes
         run: git push
