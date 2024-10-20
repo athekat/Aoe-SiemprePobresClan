@@ -20,7 +20,7 @@ fetch(dataFile)
     document.getElementById('sir_monkeymatches').textContent = data.sir_monkey["4"].win + data.sir_monkey["4"].losses + data.sir_monkey["3"].win + data.sir_monkey["3"].losses;
     document.getElementById('sir_monkeymatches1v1').textContent = data.sir_monkey["3"].win + data.sir_monkey["3"].losses;
     document.getElementById('sir_monkeymatchestg').textContent = data.sir_monkey["4"].win + data.sir_monkey["4"].losses;
-    document.getElementById('alanthekatrating1v1').textContent = data.thexcarpincho["3"].rating;
+    document.getElementById('alanthekatrating1v1').textContent = data.carpincho["3"].rating;
     document.getElementById('alanthekatratingtg').textContent = data.carpincho["4"].rating;
     document.getElementById('alanthekatmatches').textContent = data.alanthekat["4"].win + data.alanthekat["4"].losses + data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["4"].win + data.carpincho["4"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["4"].win + data.thexcarpincho["4"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
     document.getElementById('alanthekatmatches1v1').textContent = data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
