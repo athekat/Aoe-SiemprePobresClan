@@ -17,7 +17,7 @@ data = json_data['data']
 
 ratings = [entry['3'] for entry in data.values() if entry['3'] >= 0]
 
-highlighted_players = ["dicopatito", "Nanox", "thexcarpincho"]  # Add more player names as needed
+highlighted_players = ["dicopatito", "Nanox", "Carpincho"]  # Add more player names as needed
 highlighted_elos = {}
 
 for player in highlighted_players:
