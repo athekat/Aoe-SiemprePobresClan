@@ -25,6 +25,34 @@ fetch(dataFile)
     document.getElementById('alanthekatmatches').textContent = data.alanthekat["4"].win + data.alanthekat["4"].losses + data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["4"].win + data.carpincho["4"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["4"].win + data.thexcarpincho["4"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
     document.getElementById('alanthekatmatches1v1').textContent = data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
     document.getElementById('alanthekatmatchestg').textContent = data.alanthekat["4"].win + data.alanthekat["4"].losses + data.carpincho["4"].win + data.carpincho["4"].losses + data.thexcarpincho["4"].win + data.thexcarpincho["4"].losses;
+   
+    var datescarpincho=[]
+    datescarpincho.push(moment(data.carpincho["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datescarpincho.push(moment(data.carpincho["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    var maxDatecarpincho=new Date(Math.max.apply(null,datescarpincho)); 
+    var formattedDatecarpincho = moment(maxDatecarpincho).format('DD/MM/YYYY');
+    document.getElementById('alanthekatrecentmatchdate').textContent = formattedDatecarpincho;
+
+    var datesdicopatito=[]
+    datesdicopatito.push(moment(data.dicopato_2["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datesdicopatito.push(moment(data.dicopato_2["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    var maxDatedicopatito=new Date(Math.max.apply(null,datesdicopatito)); 
+    var formattedDatedicopatito = moment(maxDatedicopatito).format('DD/MM/YYYY');
+    document.getElementById('dicopatitorecentmatchdate').textContent = formattedDatedicopatito;
+
+    var datessir_monkey=[]
+    datessir_monkey.push(moment(data.sir_monkey["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datessir_monkey.push(moment(data.sir_monkey["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    var maxDatesir_monkey=new Date(Math.max.apply(null,datessir_monkey)); 
+    var formattedDatesir_monkey =moment(maxDatesir_monkey).format('DD/MM/YYYY');
+    document.getElementById('sirmonkeyrecentmatchdate').textContent = formattedDatesir_monkey;
+
+    var datesnanox=[]
+    datesnanox.push(moment(data.nanox["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datesnanox.push(moment(data.nanox["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    var maxDatenanox=new Date(Math.max.apply(null,datesnanox)); 
+    var formattedDatenanox = moment(maxDatenanox).format('DD/MM/YYYY');
+    document.getElementById('nanoxrecentmatchdate').textContent = formattedDatenanox;
 
   })
   
