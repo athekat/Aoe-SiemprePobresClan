@@ -25,6 +25,12 @@ fetch(dataFile)
     document.getElementById('alanthekatmatches').textContent = data.alanthekat["4"].win + data.alanthekat["4"].losses + data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["4"].win + data.carpincho["4"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["4"].win + data.thexcarpincho["4"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
     document.getElementById('alanthekatmatches1v1').textContent = data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
     document.getElementById('alanthekatmatchestg').textContent = data.alanthekat["4"].win + data.alanthekat["4"].losses + data.carpincho["4"].win + data.carpincho["4"].losses + data.thexcarpincho["4"].win + data.thexcarpincho["4"].losses;
+    document.getElementById('emorating1v1').textContent = data.emo["3"].rating;
+    document.getElementById('emoratingtg').textContent = data.emo["4"].rating;
+    document.getElementById('emomatches').textContent = data.emo["4"].win + data.emo["4"].losses + data.emo["3"].win + data.emo["3"].losses;
+    document.getElementById('emomatches1v1').textContent = data.emo["3"].win + data.emo["3"].losses;
+    document.getElementById('emomatchestg').textContent = data.emo["4"].win + data.emo["4"].losses;
+
    
     var datescarpincho=[]
     datescarpincho.push(moment(data.carpincho["4"].lastmatchdate, 'DD MM YYYY').toDate());
@@ -53,6 +59,13 @@ fetch(dataFile)
     var maxDatenanox=new Date(Math.max.apply(null,datesnanox)); 
     var formattedDatenanox = moment(maxDatenanox).format('DD/MM/YYYY');
     document.getElementById('nanoxrecentmatchdate').textContent = formattedDatenanox;
+
+    var datesemo=[]
+    datesemo.push(moment(data.emo["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datesemo.push(moment(data.emo["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    var maxDateemo=new Date(Math.max.apply(null,datesemo)); 
+    var formattedDateemo = moment(maxDateemo).format('DD/MM/YYYY');
+    document.getElementById('emorecentmatchdate').textContent = formattedDateemo;
 
   })
   
