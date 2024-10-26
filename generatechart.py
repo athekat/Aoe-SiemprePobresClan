@@ -18,13 +18,16 @@ data = json_data['data']
 ratings = [entry['3'] for entry in data.values() if entry['3'] >= 0]
 
 highlighted_players = ["dicopatito", "Nanox", "Carpincho"]  # Add more player names as needed
-highlighted_elos = {}
-
+highlighted_elos = {} 
 for player in highlighted_players:
     for entry in data.values():
         if entry['N'] == player and entry['3'] >= 0:
-            highlighted_elos[player] = entry['3']
-            break
+            if player == "Carpincho":
+                # Filter Carpincho with ELO less than 2000
+                if entry['3'] < 2000:
+                    highlighted_elos[player] = entry['3']
+            else:
+                highlighted_elos[player] = entry['3']
 
 bin_size = 10
 elo_min = min(ratings)
