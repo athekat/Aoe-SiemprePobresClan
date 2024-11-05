@@ -42,7 +42,7 @@
           <td class="d-none d-sm-table-cell text-center">
             <span class="d-inline-flex gap-1">
               <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#carpinchoHist" aria-expanded="false" aria-controls="collapseExample">
-              View Match</button>
+              View More</button>
             </span>
           </td>  
         </tr>
@@ -50,10 +50,17 @@
         <td colspan="9">
           <div class="collapse" id="carpinchoHist">
             <div class="m-2">
+              <p class="text-center">Last Match</p>
               <p class="dark"><span id="lastcarpincho"></span>
               </p>
             </div>
           </div>
+        </td>
+      </tr>
+      <tr class="collapse" id="carpinchoHist">
+        <td colspan="9" class="text-center">
+          <p>ELO Evolution</p>
+          <img class="float-center" src="Carpincho_elo.png" width="100%" alt="">
         </td>
       </tr>
       <tr>
@@ -68,7 +75,7 @@
         <td class="d-none d-sm-table-cell text-center">
           <span class="d-inline-flex gap-1">
           <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#patoHist" aria-expanded="false" aria-controls="collapseExample">
-            View Match</button>
+            View More</button>
           </span>
         </td>  
       </tr>
@@ -80,6 +87,12 @@
               </p>
             </div>
           </div>
+        </td>
+      </tr>
+      <tr class="collapse" id="patoHist">
+        <td colspan="9" class="text-center">
+          <p>ELO Evolution</p>
+          <img class="float-center" src="dicopatito_elo.png" width="100%" alt="">
         </td>
       </tr>
       <tr>
@@ -94,7 +107,7 @@
         <td class="d-none d-sm-table-cell text-center">
           <span class="d-inline-flex gap-1">
               <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#nanoxhist" aria-expanded="false" aria-controls="collapseExample">
-                View Match</button>
+                View More</button>
           </span>
         </td>  
       </tr>
@@ -105,6 +118,12 @@
                   <p class="dark"><span id="lastnanox"></span></p>
                 </div>
               </div>
+            </td>
+          </tr>
+          <tr class="collapse" id="nanoxhist">
+            <td colspan="9" class="text-center">
+              <p>ELO Evolution</p>
+              <img class="float-center" src="Nanox_elo.png" width="100%" alt="">
             </td>
           </tr>
           <tr>
@@ -119,7 +138,7 @@
             <td class="d-none d-sm-table-cell text-center">
               <span class="d-inline-flex gap-1">
               <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#sirMonkeyhist" aria-expanded="false" aria-controls="collapseExample">
-                View Match</button>
+                View More</button>
               </span>
             </td>  
           </tr>
@@ -152,7 +171,7 @@
     </table>
 <p style="font-size:75%;" class="text-end">Automatically updates every hour. <br>Last Updated: <span id="lastUpdated"></span> GMT.<br><img src="https://github.com/athekat/aoe-playersdata/actions/workflows/main.yml/badge.svg" alt=".github/workflows/main.yml" /></p>
 <iframe src="1v1chart.html" width="100%" height="600px"></iframe>
-<p style="font-size:75%;" class="text-end">Players will only appear if they have played at least 10 ranked games and at least one ranked game in the last 28 days.<br>Data updated daily via <a href="https://ratings.aoe2.se/" target="_blank" rel="noopener noreferrer">ratings.aoe2.se</a>.</p>
+<p style="font-size:75%;" class="text-end">Data updated daily via <a href="https://ratings.aoe2.se/" target="_blank" rel="noopener noreferrer">ratings.aoe2.se</a>.</p>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
