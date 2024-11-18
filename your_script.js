@@ -1,6 +1,7 @@
 const dataFile = 'https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/player_stats.json';
 const lastUpdated = 'https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/lastUpdated.txt';
-const mostrecentmatch ='https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/mostrecentmatch.json';
+// const mostrecentmatch ='https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/mostrecentmatch.json';
+const newmostrecentmatch = 'https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/mostrecentmatch.json';
 
 fetch(dataFile)
   .then(response => response.json())
@@ -79,14 +80,35 @@ fetch(lastUpdated)
     document.getElementById('lastUpdated').textContent = data;
   });
 
-fetch(mostrecentmatch)
+// fetch(mostrecentmatch)
+//   .then(response => response.json())
+//   .then(data => {
+//     document.getElementById('lastdicopatito').textContent = data[0]["Dicopatito"];
+//     // document.getElementById('lastdicopato').textContent = data[1]["Pato"];
+//     document.getElementById('lastnanox').textContent = data[2]["Nanox"];
+//     document.getElementById('lastsirmonkey').textContent = data[3]["Sir Monkey"];
+//     // document.getElementById('lastalanthekat').textContent = data[4]["alanthekat"];
+//     document.getElementById('lastcarpincho').textContent = data[5]["Carpincho"];
+//     // document.getElementById('lastthexcarpincho').textContent = data[6]["thexcarpincho"];
+//   });
+
+  fetch(newmostrecentmatch)
   .then(response => response.json())
   .then(data => {
-    document.getElementById('lastdicopatito').textContent = data[0]["Dicopatito"];
-    // document.getElementById('lastdicopato').textContent = data[1]["Pato"];
-    document.getElementById('lastnanox').textContent = data[2]["Nanox"];
-    document.getElementById('lastsirmonkey').textContent = data[3]["Sir Monkey"];
-    // document.getElementById('lastalanthekat').textContent = data[4]["alanthekat"];
-    document.getElementById('lastcarpincho').textContent = data[5]["Carpincho"];
-    // document.getElementById('lastthexcarpincho').textContent = data[6]["thexcarpincho"];
+    document.getElementById('CarpiLastMatch').innerHTML = data.Carpincho["LastMatch"];
+    document.getElementById('CarpiTeam1').innerHTML = data.Carpincho["Team 1"];
+    document.getElementById('CarpiTeam2').innerHTML = data.Carpincho["Team 2"];
+    document.getElementById('CarpiDownload').innerHTML = data.Carpincho["DownloadRecLink"];
+    document.getElementById('DicoLastMatch').innerHTML = data.Dicopatito["LastMatch"];
+    document.getElementById('DicoTeam1').innerHTML = data.Dicopatito["Team 1"];
+    document.getElementById('DicoTeam2').innerHTML = data.Dicopatito["Team 2"];
+    document.getElementById('DicoDownload').innerHTML = data.Dicopatito["DownloadRecLink"];
+    document.getElementById('MonkeyLastMatch').innerHTML = data.SirMonkey["LastMatch"];
+    document.getElementById('MonkeyTeam1').innerHTML = data.SirMonkey["Team 1"];
+    document.getElementById('MonkeyTeam2').innerHTML = data.SirMonkey["Team 2"];
+    document.getElementById('MonkeyDownload').innerHTML = data.SirMonkey["DownloadRecLink"];
+    document.getElementById('NanoxLastMatch').innerHTML = data.Nanox["LastMatch"];
+    document.getElementById('NanoxTeam1').innerHTML = data.Nanox["Team 1"];
+    document.getElementById('NanoxTeam2').innerHTML = data.Nanox["Team 2"];
+    document.getElementById('NanoxDownload').innerHTML = data.Nanox["DownloadRecLink"];
   });
