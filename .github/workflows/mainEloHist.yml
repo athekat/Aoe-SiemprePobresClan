@@ -22,7 +22,7 @@ jobs:
         run: |
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
-          git add Carpincho_elo.png dicopatito_elo.png Nanox_elo.png
+          git add img/Carpincho_elo.png img/dicopatito_elo.png img/Nanox_elo.png
           git commit -m "Update date to $(date +%Y-%m-%d)" || echo "No changes to commit"
       - name: Push changes
         run: git push
