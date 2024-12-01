@@ -16,7 +16,7 @@ jobs:
           python -m pip install requests plotly datetime kaleido
       - name: Run Python script
         run: |
-          python elochart.py
+          python img/elochart.py
 
       - name: Commit changes
         run: |
