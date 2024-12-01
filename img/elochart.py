@@ -60,7 +60,7 @@ def create_and_save_rating_chart(player_name, player_ratings, filename):
         )
 
         fig.update_layout(
-            margin=dict(l=20, r=20, t=20, b=20),
+            margin=dict(l=20, r=20, t=20, b=20),	
             plot_bgcolor="#2C3034",
             paper_bgcolor="#2C3034",
             font=dict(family="Arial", size=10, color="lightgray"),
@@ -83,5 +83,5 @@ players = [
 for player in players:
     player_ratings = get_player_ratings(player["api_url"], player["name"])
     print(f"Retrieved data for {player['name']}")
-    filename = f"{player['name']}_elo.png"
+    filename = f"img/{player['name']}_elo.png"
     create_and_save_rating_chart(player["name"], player_ratings, filename)
