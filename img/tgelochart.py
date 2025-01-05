@@ -74,14 +74,14 @@ def create_and_save_rating_chart(player_name, player_ratings, filename):
 
 
 players = [
-    {"name": "Carpincho", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=6446904&search=&leaderboard_ids=rm_1v1&page=1"},
-    {"name": "Nanox", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=439001&search=&leaderboard_ids=rm_1v1&page=1"},
-    {"name": "dicopatito", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=6237950&search=&leaderboard_ids=rm_1v1&page=1"},
-    {"name": "Sir Monkey", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=903496&search=&leaderboard_ids=rm_1v1&page=1"}
+    {"name": "Carpincho", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=6446904&search=&leaderboard_ids=rm_team&page=1"},
+    {"name": "Nanox", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=439001&search=&leaderboard_ids=rm_team&page=1"},
+    {"name": "dicopatito", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=6237950&search=&leaderboard_ids=rm_team&page=1"},
+    {"name": "Sir Monkey", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=903496&search=&leaderboard_ids=rm_team&page=1"}
 ]
 
 for player in players:
     player_ratings = get_player_ratings(player["api_url"], player["name"])
     print(f"Retrieved data for {player['name']}")
-    filename = f"img/{player['name']}_elo.png"
+    filename = f"img/{player['name']}_tgelo.png"
     create_and_save_rating_chart(player["name"], player_ratings, filename)

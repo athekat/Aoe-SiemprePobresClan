@@ -1,0 +1,17 @@
+.modal-content {
+  background-color: #343a40; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  border-color: #495057; /* Borde más oscuro */
+}
+
+.modal-header {
+  border-bottom-color: #495057;
+}
+
+.modal-footer {
+  border-top-color: #495057;
+}
+
+.btn-close {
+    filter: invert(1); /* Invertir el color del botón de cerrar */
+}
