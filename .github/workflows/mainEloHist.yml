@@ -16,13 +16,14 @@ jobs:
           python -m pip install requests plotly datetime kaleido
       - name: Run Python script
         run: |
-          python img/elochart.py
+          python img/1v1elochart.py
+          python img/tgelochart.py
 
       - name: Commit changes
         run: |
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
-          git add img/Carpincho_elo.png img/dicopatito_elo.png img/Nanox_elo.png
+          git add img/Carpincho_1v1elo.png img/dicopatito_1v1elo.png img/Nanox_1v1elo.png img/Carpincho_tgelo.png img/dicopatito_tgelo.png img/Nanox_tgelo.png img/Sir Monkey_tgelo.png
           git commit -m "Update date to $(date +%Y-%m-%d)" || echo "No changes to commit"
       - name: Push changes
         run: git push
