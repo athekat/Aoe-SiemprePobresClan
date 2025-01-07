@@ -97,7 +97,7 @@ grouped_data = df.groupby(['alias', 'civ']).size().reset_index(name='count')
 for alias in df['alias'].unique():
     alias_data = grouped_data[grouped_data['alias'] == alias]
     fig = px.pie(alias_data, names='civ', values='count')
-    fig.update_traces(textposition='inside', textinfo='percent+label')
+    fig.update_traces(textposition='inside', textinfo='percent+label', textfont_size=22)
 
     # Set desired width and height
     width = 1600  # Adjust these values as needed
