@@ -84,8 +84,6 @@ for user_dict in USER_IDS_LIST:
     else:
         print("No matches found for Steam ID")
 
-# filtered_data = [entry for entry in pibes_data if entry['match_type'] in [6, 7, 8, 9]]
-
 #Convert to df
 df = pd.DataFrame(pibes_data)
 
@@ -98,10 +96,14 @@ for alias in df['alias'].unique():
     alias_data = grouped_data[grouped_data['alias'] == alias]
     fig = px.pie(alias_data, names='civ', values='count')
     fig.update_traces(textposition='inside', textinfo='percent+label', textfont_size=22)
+    fig.update_layout(
+            plot_bgcolor="#2C3034",
+            paper_bgcolor="#2C3034",
+	    showlegend=False,
+        )
 
-    # Set desired width and height
-    width = 1600  # Adjust these values as needed
+    width = 1600  
     height = 800
 
-    # Save the chart as jpg
+    # Save the chart
     write_image(fig, f"{alias}_civs.jpg", width=width, height=height)
