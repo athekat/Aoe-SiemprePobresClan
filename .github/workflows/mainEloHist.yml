@@ -21,11 +21,13 @@ jobs:
           python img/mostusedciv.py
           
 
+      - name: Move the HTML file
+        run: mv *.jpg img/
       - name: Commit changes
         run: |
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
-          git add img/
+          git add .
           git commit -m "Update date to $(date +%Y-%m-%d)" || echo "No changes to commit"
       - name: Push changes
         run: git push
