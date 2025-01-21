@@ -1,0 +1,28 @@
+name: Make chart Amount
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0/12 * * *"
+
+jobs:
+  download-div-image:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          python -m pip install requests plotly
+      - name: Run Python script
+        run: |
+          python AmountPlayed.py
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add Amountplayed.html
+          git commit -m "Update date to $(date +%Y-%m-%d)" || echo "No changes to commit"
+      - name: Push changes
+        run: git push
