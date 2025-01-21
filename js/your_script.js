@@ -6,11 +6,11 @@ const newmostrecentmatch = 'https://raw.githubusercontent.com/athekat/aoe-player
 fetch(dataFile)
   .then(response => response.json())
   .then(data => {
-    document.getElementById('patorating1v1').textContent = Math.max(data.dicopato_1["3"].rating, data.dicopato_2["3"].rating);
-    document.getElementById('patoratingtg').textContent = data.dicopato_2["4"].rating;
-    document.getElementById('patomatches').textContent = data.dicopato_1["4"].win + data.dicopato_1["4"].losses + data.dicopato_1["3"].win + data.dicopato_1["3"].losses + data.dicopato_2["4"].win + data.dicopato_2["4"].losses + data.dicopato_2["3"].win + data.dicopato_2["3"].losses;
-    document.getElementById('patomatches1v1').textContent = data.dicopato_1["3"].win + data.dicopato_1["3"].losses + data.dicopato_2["3"].win + data.dicopato_2["3"].losses;
-    document.getElementById('patomatchestg').textContent = data.dicopato_1["4"].win + data.dicopato_1["4"].losses + data.dicopato_2["4"].win + data.dicopato_2["4"].losses;
+    document.getElementById('patorating1v1').textContent = Math.max(data.dicopato["3"].rating, data.dicopatito["3"].rating);
+    document.getElementById('patoratingtg').textContent = data.dicopatito["4"].rating;
+    document.getElementById('patomatches').textContent = data.dicopato["4"].win + data.dicopato["4"].losses + data.dicopato["3"].win + data.dicopato["3"].losses + data.dicopatito["4"].win + data.dicopatito["4"].losses + data.dicopatito["3"].win + data.dicopatito["3"].losses;
+    document.getElementById('patomatches1v1').textContent = data.dicopato["3"].win + data.dicopato["3"].losses + data.dicopatito["3"].win + data.dicopatito["3"].losses;
+    document.getElementById('patomatchestg').textContent = data.dicopato["4"].win + data.dicopato["4"].losses + data.dicopatito["4"].win + data.dicopatito["4"].losses;
     document.getElementById('nanoxrating1v1').textContent = data.nanox["3"].rating;
     document.getElementById('nanoxratingtg').textContent = data.nanox["4"].rating;
     document.getElementById('nanoxmatches').textContent = data.nanox["4"].win + data.nanox["4"].losses + data.nanox["3"].win + data.nanox["3"].losses;
@@ -41,8 +41,8 @@ fetch(dataFile)
     document.getElementById('alanthekatrecentmatchdate').textContent = formattedDatecarpincho;
 
     var datesdicopatito=[]
-    datesdicopatito.push(moment(data.dicopato_2["4"].lastmatchdate, 'DD MM YYYY').toDate());
-    datesdicopatito.push(moment(data.dicopato_2["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    datesdicopatito.push(moment(data.dicopatito["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datesdicopatito.push(moment(data.dicopatito["3"].lastmatchdate, 'DD MM YYYY').toDate());
     var maxDatedicopatito=new Date(Math.max.apply(null,datesdicopatito)); 
     var formattedDatedicopatito = moment(maxDatedicopatito).format('DD/MM/YYYY');
     document.getElementById('dicopatitorecentmatchdate').textContent = formattedDatedicopatito;
