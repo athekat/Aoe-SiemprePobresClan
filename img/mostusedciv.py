@@ -14,12 +14,13 @@ civ_list = {
     1: "Aztecs", 2: "Bengalis", 3: "Berbers", 4: "Bohemians", 5: "Britons",
     6: "Bulgarians", 7: "Burgundians", 8: "Burmese", 9: "Byzantines", 10: "Celts",
     11: "Chinese", 12: "Cumans", 13: "Dravidians", 14: "Ethiopians", 15: "Franks",
-    17: "Goths", 18: "Gurjaras", 19: "Huns", 20: "Incas", 21: "Hindustanis",
+    17: "Goths", 18: "Gurjaras", 19: "Huns", 20: "Incas", 21: "Indians",
     22: "Italians", 23: "Japanese", 24: "Khmer", 25: "Koreans", 26: "Lithuanians",
     27: "Magyars", 28: "Malay", 29: "Malians", 30: "Mayans", 31: "Mongols",
     32: "Persians", 33: "Poles", 34: "Portuguese", 36: "Saracens", 37: "Sicilians",
     38: "Slavs", 39: "Spanish", 40: "Tatars", 41: "Teutons", 42: "Turks",
-    43: "Vietnamese", 44: "Vikings", 35: "Romans", 0: "Armenians", 16: "Georgians"
+    43: "Vietnamese", 44: "Vikings", 45: "Romans", 46: "Armenians", 47: "Georgians",
+    53: "Jurchens", 54: "Khitans"
 }
 
 # API
