@@ -21,8 +21,8 @@ fetch(dataFile)
     document.getElementById('sir_monkeymatches').textContent = data.sir_monkey["4"].win + data.sir_monkey["4"].losses + data.sir_monkey["3"].win + data.sir_monkey["3"].losses;
     document.getElementById('sir_monkeymatches1v1').textContent = data.sir_monkey["3"].win + data.sir_monkey["3"].losses;
     document.getElementById('sir_monkeymatchestg').textContent = data.sir_monkey["4"].win + data.sir_monkey["4"].losses;
-    document.getElementById('alanthekatrating1v1').textContent = data.carpincho["3"].rating;
-    document.getElementById('alanthekatratingtg').textContent = data.carpincho["4"].rating;
+    document.getElementById('alanthekatrating1v1').textContent = data.alanthekat["3"].rating;
+    document.getElementById('alanthekatratingtg').textContent = data.alanthekat["4"].rating;
     document.getElementById('alanthekatmatches').textContent = data.alanthekat["4"].win + data.alanthekat["4"].losses + data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["4"].win + data.carpincho["4"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["4"].win + data.thexcarpincho["4"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
     document.getElementById('alanthekatmatches1v1').textContent = data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
     document.getElementById('alanthekatmatchestg').textContent = data.alanthekat["4"].win + data.alanthekat["4"].losses + data.carpincho["4"].win + data.carpincho["4"].losses + data.thexcarpincho["4"].win + data.thexcarpincho["4"].losses;
@@ -34,8 +34,8 @@ fetch(dataFile)
 
    
     var datescarpincho=[]
-    datescarpincho.push(moment(data.carpincho["4"].lastmatchdate, 'DD MM YYYY').toDate());
-    datescarpincho.push(moment(data.carpincho["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    datescarpincho.push(moment(data.alanthekat["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datescarpincho.push(moment(data.alanthekat["3"].lastmatchdate, 'DD MM YYYY').toDate());
     var maxDatecarpincho=new Date(Math.max.apply(null,datescarpincho)); 
     var formattedDatecarpincho = moment(maxDatecarpincho).format('DD/MM/YYYY');
     document.getElementById('alanthekatrecentmatchdate').textContent = formattedDatecarpincho;
@@ -95,10 +95,10 @@ fetch(lastUpdated)
   fetch(newmostrecentmatch)
   .then(response => response.json())
   .then(data => {
-    document.getElementById('CarpiLastMatch').innerHTML = data.Carpincho["LastMatch"];
-    document.getElementById('CarpiTeam1').innerHTML = data.Carpincho["Team 1"];
-    document.getElementById('CarpiTeam2').innerHTML = data.Carpincho["Team 2"];
-    document.getElementById('CarpiDownload').innerHTML = data.Carpincho["DownloadRecLink"];
+    document.getElementById('CarpiLastMatch').innerHTML = data.alanthekat["LastMatch"];
+    document.getElementById('CarpiTeam1').innerHTML = data.alanthekat["Team 1"];
+    document.getElementById('CarpiTeam2').innerHTML = data.alanthekat["Team 2"];
+    document.getElementById('CarpiDownload').innerHTML = data.alanthekat["DownloadRecLink"];
     document.getElementById('DicoLastMatch').innerHTML = data.Dicopatito["LastMatch"];
     document.getElementById('DicoTeam1').innerHTML = data.Dicopatito["Team 1"];
     document.getElementById('DicoTeam2').innerHTML = data.Dicopatito["Team 2"];
