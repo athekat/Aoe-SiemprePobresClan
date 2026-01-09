@@ -5,8 +5,15 @@ import plotly.graph_objects as go
 import time
 
 def get_player_ratings(api_url, player_name):
+    # Define your project URL here
+    project_url = "https://siemprepobres.alan.com.ar"
+    headers = {
+        "User-Agent": f"GetTGelo/1.0 ({project_url})"
+    }
+
     try:
-        response = requests.get(api_url)
+        # Pass the headers dictionary to the get request
+        response = requests.get(api_url, headers=headers)
     except requests.exceptions.ConnectionError as e:
         print(f"API connection error: {e}")
         return []
@@ -85,3 +92,4 @@ for player in players:
     print(f"Retrieved data for {player['name']}")
     filename = f"img/{player['name']}_tgelo.png"
     create_and_save_rating_chart(player["name"], player_ratings, filename)
+
