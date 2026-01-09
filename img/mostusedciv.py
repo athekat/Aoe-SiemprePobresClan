@@ -9,20 +9,19 @@ import pandas as pd
 def convert_timestamp_to_date(timestamp):
     return datetime.utcfromtimestamp(timestamp).strftime('%Y-%m-%d')
 
-# Civ Mapping (might change with new civs DLC)
+# Civ Mapping (might change with new civs DLC). El current civ mapping está en el discord de libre:match
 civ_list = {
     0: "Armenians", 1: "Aztecs", 2: "Bengalis", 3: "Berbers", 4: "Bohemians",
     5: "Britons", 6: "Bulgarians", 7: "Burgundians", 8: "Burmese", 9: "Byzantines",
     10: "Celts", 11: "Chinese", 12: "Cumans", 13: "Dravidians", 14: "Ethiopians",
     15: "Franks", 16: "Georgians", 17: "Goths", 18: "Gurjaras", 19: "Huns",
-    20: "Incas", 21: "Hindustanis", 22: "Italians", 23: "Japanese", 24: "Khmer",
+    20: "Incas", 21: "Indians", 22: "Italians", 23: "Japanese", 24: "Khmer",
     25: "Koreans", 26: "Lithuanians", 27: "Magyars", 28: "Malay", 29: "Malians",
     30: "Mayans", 31: "Mongols", 32: "Persians", 33: "Poles", 34: "Portuguese",
     35: "Romans", 36: "Saracens", 37: "Sicilians", 38: "Slavs", 39: "Spanish",
     40: "Tatars", 41: "Teutons", 42: "Turks", 43: "Vietnamese", 44: "Vikings",
-    45: "Shu", 46: "Wei", 47: "Wu", 48: "Jurchens", 49: "Khitans",
-    50: "Achaemenids", 51: "Athenians", 52: "Spartans", 
-    53: "Macedonians", 54: "Thracians", 55: "Puru"
+    45: "Achaemenids", 46: "Athenians", 47: "Spartans", 48: "Shu", 49: "Wu",
+    50: "Wei", 51: "Jurchens", 52: "Khitans"
 }
 
 # API
