@@ -9,7 +9,7 @@ response = requests.get(url)
 data = json.load(BytesIO(response.content))
 
 player_groups = {
-    "Dicopato": ["dicopato", "dicopatito"],
+    "Dicopato": ["dicopato", "dicopatito", "pato350z"],
     "Sir Monkey": ["sir_monkey"],
     "Nanox": ["nanox"],
     "Carpincho": ["alanthekat", "carpincho", "thexcarpincho"],
@@ -36,6 +36,7 @@ for player_name, accounts in player_groups.items():
 
 account_colors = {
     "dicopato": "royalblue",
+    "pato350z": "darkblue",
     "dicopatito": "lightskyblue",
     "sir_monkey": "darkkhaki",
     "nanox": "mediumseagreen",
