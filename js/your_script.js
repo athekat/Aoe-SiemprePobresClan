@@ -1,16 +1,16 @@
 const dataFile = 'https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/player_stats.json';
 const lastUpdated = 'https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/lastUpdated.txt';
 // const mostrecentmatch ='https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/mostrecentmatch.json';
-const newmostrecentmatch = 'https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/mostrecentmatch.json';
+// const newmostrecentmatch = 'https://raw.githubusercontent.com/athekat/aoe-playersdata/refs/heads/main/mostrecentmatch.json';
 
 fetch(dataFile)
   .then(response => response.json())
   .then(data => {
-    document.getElementById('patorating1v1').textContent = Math.max(data.dicopato["3"].rating, data.dicopatito["3"].rating);
-    document.getElementById('patoratingtg').textContent = data.dicopatito["4"].rating;
-    document.getElementById('patomatches').textContent = data.dicopato["4"].win + data.dicopato["4"].losses + data.dicopato["3"].win + data.dicopato["3"].losses + data.dicopatito["4"].win + data.dicopatito["4"].losses + data.dicopatito["3"].win + data.dicopatito["3"].losses;
-    document.getElementById('patomatches1v1').textContent = data.dicopato["3"].win + data.dicopato["3"].losses + data.dicopatito["3"].win + data.dicopatito["3"].losses;
-    document.getElementById('patomatchestg').textContent = data.dicopato["4"].win + data.dicopato["4"].losses + data.dicopatito["4"].win + data.dicopatito["4"].losses;
+    document.getElementById('patorating1v1').textContent = Math.max(data.dicopato["3"].rating, data.dicopatito["3"].rating, data.pato350z["3"].rating);
+    document.getElementById('patoratingtg').textContent = Math.max(data.dicopato["4"].rating, data.dicopatito["4"].rating, data.pato350z["4"].rating);
+    document.getElementById('patomatches').textContent = data.dicopato["4"].win + data.dicopato["4"].losses + data.dicopato["3"].win + data.dicopato["3"].losses + data.dicopatito["4"].win + data.dicopatito["4"].losses + data.dicopatito["3"].win + data.dicopatito["3"].losses + data.pato350z["4"].win + data.pato350z["4"].losses + data.pato350z["3"].win + data.pato350z["3"].losses;
+    document.getElementById('patomatches1v1').textContent = data.dicopato["3"].win + data.dicopato["3"].losses + data.dicopatito["3"].win + data.dicopatito["3"].losses + data.pato350z["3"].win + data.pato350z["3"].losses;
+    document.getElementById('patomatchestg').textContent = data.dicopato["4"].win + data.dicopato["4"].losses + data.dicopatito["4"].win + data.dicopatito["4"].losses + data.pato350z["4"].win + data.pato350z["4"].losses;
     document.getElementById('nanoxrating1v1').textContent = data.nanox["3"].rating;
     document.getElementById('nanoxratingtg').textContent = data.nanox["4"].rating;
     document.getElementById('nanoxmatches').textContent = data.nanox["4"].win + data.nanox["4"].losses + data.nanox["3"].win + data.nanox["3"].losses;
@@ -21,8 +21,8 @@ fetch(dataFile)
     document.getElementById('sir_monkeymatches').textContent = data.sir_monkey["4"].win + data.sir_monkey["4"].losses + data.sir_monkey["3"].win + data.sir_monkey["3"].losses;
     document.getElementById('sir_monkeymatches1v1').textContent = data.sir_monkey["3"].win + data.sir_monkey["3"].losses;
     document.getElementById('sir_monkeymatchestg').textContent = data.sir_monkey["4"].win + data.sir_monkey["4"].losses;
-    document.getElementById('alanthekatrating1v1').textContent = data.alanthekat["3"].rating;
-    document.getElementById('alanthekatratingtg').textContent = data.alanthekat["4"].rating;
+    document.getElementById('alanthekatrating1v1').textContent = Math.max(data.alanthekat["3"].rating, data.carpincho["3"].rating, data.thexcarpincho["3"].rating);
+    document.getElementById('alanthekatratingtg').textContent = Math.max(data.alanthekat["4"].rating, data.carpincho["4"].rating, data.thexcarpincho["4"].rating);
     document.getElementById('alanthekatmatches').textContent = data.alanthekat["4"].win + data.alanthekat["4"].losses + data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["4"].win + data.carpincho["4"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["4"].win + data.thexcarpincho["4"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
     document.getElementById('alanthekatmatches1v1').textContent = data.alanthekat["3"].win + data.alanthekat["3"].losses + data.carpincho["3"].win + data.carpincho["3"].losses + data.thexcarpincho["3"].win + data.thexcarpincho["3"].losses;
     document.getElementById('alanthekatmatchestg').textContent = data.alanthekat["4"].win + data.alanthekat["4"].losses + data.carpincho["4"].win + data.carpincho["4"].losses + data.thexcarpincho["4"].win + data.thexcarpincho["4"].losses;
@@ -36,13 +36,21 @@ fetch(dataFile)
     var datescarpincho=[]
     datescarpincho.push(moment(data.alanthekat["4"].lastmatchdate, 'DD MM YYYY').toDate());
     datescarpincho.push(moment(data.alanthekat["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    datescarpincho.push(moment(data.carpincho["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datescarpincho.push(moment(data.carpincho["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    datescarpincho.push(moment(data.thexcarpincho["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datescarpincho.push(moment(data.thexcarpincho["3"].lastmatchdate, 'DD MM YYYY').toDate());
     var maxDatecarpincho=new Date(Math.max.apply(null,datescarpincho)); 
     var formattedDatecarpincho = moment(maxDatecarpincho).format('DD/MM/YYYY');
     document.getElementById('alanthekatrecentmatchdate').textContent = formattedDatecarpincho;
 
     var datesdicopatito=[]
+    datesdicopatito.push(moment(data.dicopato["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datesdicopatito.push(moment(data.dicopato["3"].lastmatchdate, 'DD MM YYYY').toDate());
     datesdicopatito.push(moment(data.dicopatito["4"].lastmatchdate, 'DD MM YYYY').toDate());
     datesdicopatito.push(moment(data.dicopatito["3"].lastmatchdate, 'DD MM YYYY').toDate());
+    datesdicopatito.push(moment(data.pato350z["4"].lastmatchdate, 'DD MM YYYY').toDate());
+    datesdicopatito.push(moment(data.pato350z["3"].lastmatchdate, 'DD MM YYYY').toDate());
     var maxDatedicopatito=new Date(Math.max.apply(null,datesdicopatito)); 
     var formattedDatedicopatito = moment(maxDatedicopatito).format('DD/MM/YYYY');
     document.getElementById('dicopatitorecentmatchdate').textContent = formattedDatedicopatito;
@@ -92,23 +100,23 @@ fetch(lastUpdated)
 //     // document.getElementById('lastthexcarpincho').textContent = data[6]["thexcarpincho"];
 //   });
 
-  fetch(newmostrecentmatch)
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('CarpiLastMatch').innerHTML = data.alanthekat["LastMatch"];
-    document.getElementById('CarpiTeam1').innerHTML = data.alanthekat["Team 1"];
-    document.getElementById('CarpiTeam2').innerHTML = data.alanthekat["Team 2"];
-    document.getElementById('CarpiDownload').innerHTML = data.alanthekat["DownloadRecLink"];
-    document.getElementById('DicoLastMatch').innerHTML = data.Dicopatito["LastMatch"];
-    document.getElementById('DicoTeam1').innerHTML = data.Dicopatito["Team 1"];
-    document.getElementById('DicoTeam2').innerHTML = data.Dicopatito["Team 2"];
-    document.getElementById('DicoDownload').innerHTML = data.Dicopatito["DownloadRecLink"];
-    document.getElementById('MonkeyLastMatch').innerHTML = data.SirMonkey["LastMatch"];
-    document.getElementById('MonkeyTeam1').innerHTML = data.SirMonkey["Team 1"];
-    document.getElementById('MonkeyTeam2').innerHTML = data.SirMonkey["Team 2"];
-    document.getElementById('MonkeyDownload').innerHTML = data.SirMonkey["DownloadRecLink"];
-    document.getElementById('NanoxLastMatch').innerHTML = data.Nanox["LastMatch"];
-    document.getElementById('NanoxTeam1').innerHTML = data.Nanox["Team 1"];
-    document.getElementById('NanoxTeam2').innerHTML = data.Nanox["Team 2"];
-    document.getElementById('NanoxDownload').innerHTML = data.Nanox["DownloadRecLink"];
-  });
+  //fetch(newmostrecentmatch)
+  //.then(response => response.json())
+  //.then(data => {
+  //  document.getElementById('CarpiLastMatch').innerHTML = data.alanthekat["LastMatch"];
+  //  document.getElementById('CarpiTeam1').innerHTML = data.alanthekat["Team 1"];
+  //  document.getElementById('CarpiTeam2').innerHTML = data.alanthekat["Team 2"];
+  //  document.getElementById('CarpiDownload').innerHTML = data.alanthekat["DownloadRecLink"];
+  //  document.getElementById('DicoLastMatch').innerHTML = data.Dicopatito["LastMatch"];
+  //  document.getElementById('DicoTeam1').innerHTML = data.Dicopatito["Team 1"];
+  //  document.getElementById('DicoTeam2').innerHTML = data.Dicopatito["Team 2"];
+  //  document.getElementById('DicoDownload').innerHTML = data.Dicopatito["DownloadRecLink"];
+  //  document.getElementById('MonkeyLastMatch').innerHTML = data.SirMonkey["LastMatch"];
+  //  document.getElementById('MonkeyTeam1').innerHTML = data.SirMonkey["Team 1"];
+  //  document.getElementById('MonkeyTeam2').innerHTML = data.SirMonkey["Team 2"];
+  //  document.getElementById('MonkeyDownload').innerHTML = data.SirMonkey["DownloadRecLink"];
+  //  document.getElementById('NanoxLastMatch').innerHTML = data.Nanox["LastMatch"];
+  //  document.getElementById('NanoxTeam1').innerHTML = data.Nanox["Team 1"];
+  //  document.getElementById('NanoxTeam2').innerHTML = data.Nanox["Team 2"];
+  //  document.getElementById('NanoxDownload').innerHTML = data.Nanox["DownloadRecLink"];
+  //});
