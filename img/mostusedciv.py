@@ -21,7 +21,9 @@ civ_list = {
     35: "Romans", 36: "Saracens", 37: "Sicilians", 38: "Slavs", 39: "Spanish",
     40: "Tatars", 41: "Teutons", 42: "Turks", 43: "Vietnamese", 44: "Vikings",
     45: "Achaemenids", 46: "Athenians", 47: "Spartans", 48: "Shu", 49: "Wu",
-    50: "Wei", 51: "Jurchens", 52: "Khitans"
+    50: "Wei", 51: "Jurchens", 52: "Khitans", 58: "Muisca", 59: "Mapuche",
+	60: "Tupi"
+
 }
 
 # API
